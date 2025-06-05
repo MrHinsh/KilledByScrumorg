@@ -28,6 +28,14 @@ If you are not familiar with or do not want to use `git`, submit a [new issue](h
 
 For contributions beyond `site\data\register.json`, see the [Contributing Guide](.github/CONTRIBUTING.md).
 
+### Environments
+
+- [Production](https://lemon-stone-0045b7f10.6.azurestaticapps.net)
+- [Preview](https://lemon-stone-0045b7f10-preview.centralus.6.azurestaticapps.net/)
+- Canary - There can be 2 canary environments at once that are built from Pull Requests. They are in the form https://lemon-stone-0045b7f10-{PullRequestId}.centralus.6.azurestaticapps.net/
+
+Pull Requests automatically spawn environments. However, PR's from forks require approval to run.
+
 ### Editorial Guidelines
 
 #### Description

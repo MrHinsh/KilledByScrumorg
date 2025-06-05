@@ -42,26 +42,26 @@
       {{- end }}
     </main>
     {{- block "footer" . }}
-      <footer class="footer bg-dark text-white">
+      <footer class="footer bg-dark text-white p-4">
         <section class="section container align-items-center mb-4">
           <div class="d-flex align-items-center gap-3 justify-content-center">
-            <img src="{{- "/images/tombstone.svg" | relURL }}" width="55" height="55" alt="Killed by Scrum.org Logo" class="logo" />
+            <img src="{{- "/images/tombstone.svg" | relURL }}" width="55" height="55" alt="Killed by Scrum.org Logo" class="logo" style="filter: invert(1);" />
             <h1 class="mb-0">Killed by Scrum.org</h1>
           </div>
         </section>
         <section class="section container align-items-center mb-4">
-          <p>
-            Killed by Scrum.org is the Scrum.org graveyard; a free and open source list of discontinued Scrum.org Courses, initiatives, services, & products. We aim to be a source of factual information about the history surrounding Scrum.org's dead
-            efforts.
-          </p>
-          <p>
-            <a href="https://github.com/MrHinsh/KilledByScrumorg/graphs/contributors" target="_blank">Contributors</a> from around the world help compile, research, and maintain the information about dying and dead Scrum.org products. You can join the
-            discussion on GitHub. This project is derived from Killed By Google and Killed by Microsoft.
-          </p>
+          <div class="text-center mx-auto" style="max-width: 600px;">
+            <p>
+              Killed by Scrum.org is the Scrum.org graveyard; a free and open source list of discontinued Scrum.org Courses, initiatives, services, & products. We aim to be a source of factual information about the history surrounding Scrum.org's dead
+              efforts.
+            </p>
+            <p>
+              <a href="https://github.com/MrHinsh/KilledByScrumorg/graphs/contributors" target="_blank">Contributors</a> from around the world help compile, research, and maintain the information about dying and dead Scrum.org products. You can join the
+              discussion on GitHub. This project is derived from Killed By Google and Killed by Microsoft.
+            </p>
+            <p class="small">&copy; {{- now.Format "2006" }} Martin Hinshelwood. All rights reserved.</p>
+          </div>
         </section>
-        <div class="container">
-          <p>&copy; 2023 Deaths Register. All rights reserved.</p>
-        </div>
       </footer>
     {{- end }}
 

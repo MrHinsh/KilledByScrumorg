@@ -49,13 +49,6 @@ jobs:
         shell: pwsh
         run: |
           Get-ChildItem -Path "${{ github.workspace }}" -Directory -Force | Select-Object -ExpandProperty FullName
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Scripts
-          path: "./.powershell/**"
-          if-no-files-found: error
-          include-hidden-files: true
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v3.0.0
         with:

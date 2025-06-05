@@ -59,7 +59,7 @@
     "description": "The first go around for the PSM-II.",
     "death_date": "2015-01-01",
     "birth_date": "2015-01-01",
-    "type": "certification"
+    "type": "certification",
     "url": "https://github.com/user-attachments/files/20616772/Announcement.-.The.Scrum.org.Professional.Series.Updates.2015.pdf"
   },
   {
@@ -67,7 +67,7 @@
     "description": "Professional Scrum Coaching original idea was a simple one. Add people into our community that are not trainers, but instead Scrum Coaches (people working with teams and organizations implementing Scrum on a daily basis).",
     "death_date": "2021-07-01",
     "birth_date": "2021-12-01",
-    "type": "initiative"
+    "type": "initiative",
     "url": "https://github.com/user-attachments/files/20616772/Announcement.-.The.Scrum.org.Professional.Series.Updates.2015.pdf"
   }
 ]

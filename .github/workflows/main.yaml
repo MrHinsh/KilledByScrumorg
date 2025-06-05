@@ -332,7 +332,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: ./_site
-          api_location: ./functions
           skip_app_build: true
           skip_api_build: false
           output_location: ""

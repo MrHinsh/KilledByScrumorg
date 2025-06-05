@@ -1,11 +1,12 @@
-{{- define "banner" }}
-  <h1>Welcome to the Deaths Register</h1>
-  <p>Here you can find information about various deaths.</p>
-{{- end }}
-
 {{- define "main" }}
   {{ $deaths := .Site.Data.register }}
-  {{ $sortedDeaths := sort $deaths "death_date" "desc" }}
+  {{ $filteredDeaths := slice }}
+  {{ range $deaths }}
+    {{ if .death_date }}
+      {{ $filteredDeaths = $filteredDeaths | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $sortedDeaths := sort $filteredDeaths "death_date" "desc" }}
   <section class="section">
     <div class="container">
       <div class="row g-4">
@@ -96,12 +97,4 @@
       </div>
     </div>
   </section>
-{{- end }}
-
-{{- define "footer" }}
-  <footer class="footer bg-dark text-white">
-    <div class="container">
-      <p>&copy; 2023 Deaths Register. All rights reserved.</p>
-    </div>
-  </footer>
 {{- end }}

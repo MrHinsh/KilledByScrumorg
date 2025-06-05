@@ -2,22 +2,50 @@
   {
     "title": "Scrum Studio",
     "description": "Scrum Studio is a protected space that enables agile teams to innovate by working free from traditional organisational constraints.",
-    "death_date": "2024-06-04",
-    "birth_date": "2023-06-04",
-    "url": "https://scrum.org"
+    "birth_date": "2012-05-01",
+    "death_date": "2024-02-01",
+    "url": "https://www.scrum.org/resources/blog/scrum-studio-model-innovation"
   },
   {
     "title": "Agility Path",
-    "description": "Agility Path is a Scrum.org framework that uses Evidence-Based Management to improve organisational value delivery through outcome-focused, empirical change.",
-    "death_date": "2022-07-01",
-    "birth_date": "2014-07-01",
-    "url": "https://scrum.org"
+    "description": "Agility Path was a framework using evidence-based metrics to drive organisational change and improve agility through regular inspection of value delivery.",
+    "birth_date": "2013-07-01",
+    "death_date": "2017-12-01",
+    "url": "https://www.scrum.org/resources/blog/agility-path-what-and-why"
   },
   {
-    "title": "Evidence-based Management Consultant",
-    "description": "The Evidence-Based Management Consultant was a Scrum.org expert who helped organisations improve value delivery through outcome-focused, empirical change.",
-    "death_date": "2022-07-01",
-    "birth_date": "2013-07-01",
-    "url": "https://scrum.org"
+    "title": "Evidence-Based Management Consultant",
+    "description": "An early consultant-level accreditation programme to help organisations improve outcomes using evidence-based metrics before EBM was formalised.",
+    "birth_date": "2013-03-01",
+    "death_date": "2019-09-01",
+    "url": "https://www.scrum.org/resources/blog/measuring-what-matters-evidence-based-management"
+  },
+  {
+    "title": "Scrum Development Kit (SDK)",
+    "description": "The Scrum Development Kit was intended to provide detailed technical definitions of 'Done' and engineering practices for Scrum teams across technology stacks.",
+    "birth_date": "2015-10-01",
+    "death_date": "2016-07-15",
+    "url": "https://web.archive.org/web/20151022102306/https://www.scrum.org/Resources/Blog/The-Scrum-Development-Kits"
+  },
+  {
+    "title": "Partners in Principle",
+    "description": "Partners in Principle recognised organisations that exemplified Scrum.org's ethos and supported the improvement of the profession of software delivery.",
+    "birth_date": "2014-01-01",
+    "death_date": "2016-11-01",
+    "url": "https://www.scrum.org/resources/blog/professional-training-network"
+  },
+  {
+    "title": "Professional Scrum Guided Learning Platform (GPL)",
+    "description": "The Guided Learning Platform is a Scrum.org platform that provides structured learning paths and resources for Scrum practitioners.",
+    "death_date": "2025-03-01",
+    "birth_date": "2021-01-01",
+    "url": "https://www.scrum.org/guided-learning/professional-scrum-guided-learning-platform"
+  },
+  {
+    "title": "Advanced Professional Scrum Master (APSM)",
+    "description": "The working title of the program to assess the working proficiency of a Scrum Master without ever having met them. Not to be confised with the PSM-A class for Scrum Masters.",
+    "death_date": "2020-01-01",
+    "birth_date": "2019-01-01",
+    "url": "https://www.scrum.org/"
   }
 ]

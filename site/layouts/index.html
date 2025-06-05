@@ -1,0 +1,77 @@
+{{- define "banner" }}
+  <h1>Welcome to the Deaths Register</h1>
+  <p>Here you can find information about various deaths.</p>
+{{- end }}
+
+{{- define "main" }}
+  {{ $deaths := .Site.Data.register }}
+  <section class="section">
+    <div class="container">
+      <div class="row g-4">
+        {{ range $deaths }}
+          <div class="col-lg-4 col-md-6 col-sm-12 p-4">
+            <div class="card h-100 border-0">
+              <div class="card-body d-flex">
+                <div class="me-3 flex-shrink-0 text-center">
+                  {{ if .death_date }}
+                    {{ $deathDate := time .death_date }}
+                    {{ $now := now }}
+                    {{ if $deathDate.After $now }}
+                      <img src="/images/guillotine.svg" alt="Guillotine" width="50" height="50" />
+                      <div class="mt-1">
+                        <small class="text-muted">{{ $deathDate.Format "January 2006" }}</small>
+                      </div>
+                    {{ else if and .birth_date .death_date }}
+                      <img src="/images/tombstone.svg" alt="Tombstone" width="50" height="50" />
+                      <div class="mt-1">
+                        {{ $birthYear := (time .birth_date).Format "2006" }}
+                        {{ $deathYear := (time .death_date).Format "2006" }}
+                        <small class="text-muted">{{ $birthYear }}-{{ $deathYear }}</small>
+                      </div>
+                    {{ else if .death_date }}
+                      <small class="text-muted">?-{{ (time .death_date).Format "2006" }}</small>
+                    {{ end }}
+                  {{ else }}
+                    <img src="/images/tombstone.svg" alt="Unknown" width="50" height="50" />
+                  {{ end }}
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="card-title mb-2">
+                    {{ if .url }}
+                      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">{{ .title }}</a>
+                    {{ else }}
+                      {{ .title }}
+                    {{ end }}
+                  </h5>
+                  <p class="card-text small text-muted mb-0">
+                    {{ .description }}
+                    {{ if and .birth_date .death_date }}
+                      {{ $birthDate := time .birth_date }}
+                      {{ $deathDate := time .death_date }}
+                      {{ $now := now }}
+                      {{ $ageYears := $deathDate.Sub $birthDate }}
+                      {{ $years := div $ageYears.Hours 8760 | int }}
+                      {{ if $deathDate.After $now }}
+                        It will be almost {{ $years }} years old.
+                      {{ else }}
+                        It was {{ $years }} years old.
+                      {{ end }}
+                    {{ end }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{- end }}
+
+{{- define "footer" }}
+  <footer class="footer bg-dark text-white">
+    <div class="container">
+      <p>&copy; 2023 Deaths Register. All rights reserved.</p>
+    </div>
+  </footer>
+{{- end }}

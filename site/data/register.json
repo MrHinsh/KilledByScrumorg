@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Scrum Studio",
+    "description": "Scrum Studio is a protected space that enables agile teams to innovate by working free from traditional organisational constraints.",
+    "death_date": "2024-06-04",
+    "birth_date": "2023-06-04",
+    "url": "https://scrum.org"
+  },
+  {
+    "title": "Agility Path",
+    "description": "Agility Path is a Scrum.org framework that uses Evidence-Based Management to improve organisational value delivery through outcome-focused, empirical change.",
+    "death_date": "2024-06-04",
+    "birth_date": "2021-06-04",
+    "url": "https://scrum.org"
+  },
+  {
+    "title": "Evidence-based Management Consultant",
+    "description": "The Evidence-Based Management Consultant was a Scrum.org expert who helped organisations improve value delivery through outcome-focused, empirical change.",
+    "death_date": "2024-06-04",
+    "birth_date": "2013-06-04",
+    "url": "https://scrum.org"
+  }
+]

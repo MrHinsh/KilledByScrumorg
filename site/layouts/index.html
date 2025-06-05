@@ -5,10 +5,11 @@
 
 {{- define "main" }}
   {{ $deaths := .Site.Data.register }}
+  {{ $sortedDeaths := sort $deaths "death_date" "desc" }}
   <section class="section">
     <div class="container">
       <div class="row g-4">
-        {{ range $deaths }}
+        {{ range $sortedDeaths }}
           <div class="col-lg-4 col-md-6 col-sm-12 p-4">
             <div class="card h-100 border-0">
               <div class="card-body d-flex">
@@ -44,6 +45,35 @@
                     {{ end }}
                   </h5>
                   <p class="card-text small text-muted mb-0">
+                    {{ if .death_date }}
+                      {{ $deathDate := time .death_date }}
+                      {{ $now := now }}
+                      {{ if $deathDate.After $now }}
+                        {{ $timeDiff := $deathDate.Sub $now }}
+                        {{ $days := div $timeDiff.Hours 24 | int }}
+                        {{ if lt $days 30 }}
+                          <span>Scheduled to be killed in {{ $days }} days, </span>
+                        {{ else if lt $days 365 }}
+                          {{ $months := div $days 30 | int }}
+                          <span>Scheduled to be killed in {{ $months }} months, </span>
+                        {{ else }}
+                          {{ $years := div $days 365 | int }}
+                          <span>Scheduled to be killed in {{ $years }} years, </span>
+                        {{ end }}
+                      {{ else }}
+                        {{ $timeDiff := $now.Sub $deathDate }}
+                        {{ $days := div $timeDiff.Hours 24 | int }}
+                        {{ if lt $days 30 }}
+                          <span>Killed {{ $days }} days ago, </span>
+                        {{ else if lt $days 365 }}
+                          {{ $months := div $days 30 | int }}
+                          <span>Killed {{ $months }} months ago, </span>
+                        {{ else }}
+                          {{ $years := div $days 365 | int }}
+                          <span>Killed {{ $years }} years ago, </span>
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
                     {{ .description }}
                     {{ if and .birth_date .death_date }}
                       {{ $birthDate := time .birth_date }}

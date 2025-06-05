@@ -29,17 +29,14 @@
     {{ end }}
     {{- block "header" . }}
       <!-- HEADER -->
-      <section class="section">
-        <div class="d-flex align-items-center gap-3">
+      <section class="section container align-items-center mb-4">
+        <div class="d-flex align-items-center gap-3 justify-content-center">
           <img src="{{- "/images/tombstone.svg" | relURL }}" width="55" height="55" alt="Killed by Scrum.org Logo" class="logo" />
           <h1 class="mb-0">Killed by Scrum.org</h1>
         </div>
       </section>
     {{- end }}
     <main>
-      {{- block "banner" . }}
-        <section class="section">banner</section>
-      {{- end }}
       {{- block "main" . }}
         <section class="section">main</section>
       {{- end }}

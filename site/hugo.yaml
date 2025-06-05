@@ -8,6 +8,9 @@ summaryLength: 30
 
 enableRobotsTXT: true
 
+# Disable default taxonomies (tags and categories)
+taxonomies: {}
+
 # Site-wide parameters
 params:
   description: "Killed by Scrum.org"

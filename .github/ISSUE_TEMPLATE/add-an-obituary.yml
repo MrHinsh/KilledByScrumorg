@@ -1,0 +1,80 @@
+name: "Add an Obituary 💀"
+description: Report a dead or dying product to Killed by Scrum.org.
+title: "[Obituary]: "
+labels: ["obituary"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a dead or dying product! Please fill out the information below to help us create an accurate obituary.
+
+  - type: input
+    id: product-name
+    attributes:
+      label: "Product Name"
+      description: "What's the name of the product?"
+      placeholder: "e.g. Certification Program"
+    validations:
+      required: true
+
+  - type: textarea
+    id: product-description
+    attributes:
+      label: "Product Description"
+      description: "Describe the product in a single sentence."
+      placeholder: "A brief, clear description of what this product was or did..."
+    validations:
+      required: true
+
+  - type: input
+    id: launch-date
+    attributes:
+      label: "Launch Date"
+      description: "When was the product launched? Provide a specific date, if possible."
+      placeholder: "e.g. January 15, 2020 or Q2 2020"
+    validations:
+      required: true
+
+  - type: input
+    id: discontinuation-date
+    attributes:
+      label: "Discontinuation Date"
+      description: "When was the product discontinued? Provide a specific date, if possible."
+      placeholder: "e.g. March 30, 2024 or Q1 2024"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: product-type
+    attributes:
+      label: "Product Type"
+      description: "What type of product was it?"
+      options:
+        - Course
+        - Service
+        - Initiative
+        - Application
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: "Additional Information"
+      description: "Any additional context, links, or information about this product's death/discontinuation?"
+      placeholder: "Links to announcements, reasons for discontinuation, impact on users, etc."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Verification"
+      description: "Please confirm the following:"
+      options:
+        - label: "I have verified that this product is actually dead or discontinued"
+          required: true
+        - label: "I have checked that this obituary doesn't already exist on the site"
+          required: true

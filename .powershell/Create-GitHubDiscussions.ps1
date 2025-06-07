@@ -269,14 +269,8 @@ $($obituary.description)
 # Save updated data if changes were made
 if ($dataChanged) {
     Write-Host "`nSaving updated data to $dataFile..." -ForegroundColor Yellow
-    
-    try {
-        # Create backup
-        $backupFile = "$dataFile.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
-        Copy-Item $dataFile $backupFile
-        Write-Host "Backup created: $backupFile" -ForegroundColor Gray
-        
-        # Save updated data with proper formatting
+      try {
+        # Save updated data with proper formatting (no backup to avoid Hugo conflicts)
         $obituariesData | ConvertTo-Json -Depth 10 | Set-Content $dataFile -Encoding UTF8
         Write-Host "Data file updated successfully!" -ForegroundColor Green
     }

@@ -16,7 +16,8 @@ params:
   description: "Killed by Scrum.org"
   keywords: "Scrum"
   og_image: "/images/og-image.jpg" # URL to the default Open Graph image
-  editURL: "https://github.com/nkdAgility/KilledByScrumorg/edit/main/site/content/" # URL to edit content on GitHub
+  editURL: "https://github.com/MrHinsh/killed-by-scrumorg/edit/main/site/content/" # URL to edit content on GitHub
+  addObituaryUrl: "https://github.com/MrHinsh/killed-by-scrumorg/issues/new?template=add-an-obituary.yml"
 
 # Enable sitemap and robots.txt
 sitemap:

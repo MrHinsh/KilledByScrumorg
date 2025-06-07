@@ -6,9 +6,13 @@
       {{ $filteredDeaths = $filteredDeaths | append . }}
     {{ end }}
   {{ end }}
-  {{ $sortedDeaths := sort $filteredDeaths "death_date" "desc" }}
-  <section class="section">
+  {{ $sortedDeaths := sort $filteredDeaths "death_date" "desc" }}  <section class="section">
     <div class="container">
+      <div class="text-end">
+        <a href="{{ site.Params.addObituaryUrl}}" class="btn btn-secondary mb-3">
+          <i class="bi bi-plus-lg"></i> Add an Obituary
+        </a>
+      </div>
       <div class="row g-4">
         {{ range $sortedDeaths }}
           <div class="col-lg-4 col-md-6 col-sm-12 p-4">

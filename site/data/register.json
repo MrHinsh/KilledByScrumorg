@@ -5,7 +5,9 @@
     "birth_date": "2012-05-01",
     "death_date": "2024-02-01",
     "type": "program",
-    "url": "https://www.scrum.org/resources/scrum-studio-model-innovation"
+    "url": "https://www.scrum.org/resources/scrum-studio-model-innovation",
+    "discussionId": 10,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/10"
   },
   {
     "title": "The Agility Guide to Evidence-Based Change",
@@ -13,7 +15,9 @@
     "birth_date": "2014-05-01",
     "death_date": "2018-02-01",
     "type": "program",
-    "url": "https://www.scrum.org/resources/agility-guide-evidence-based-change"
+    "url": "https://www.scrum.org/resources/agility-guide-evidence-based-change",
+    "discussionId": 11,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/11"
   },
   {
     "title": "Agility Path",
@@ -21,7 +25,9 @@
     "birth_date": "2013-07-01",
     "death_date": "2017-12-01",
     "type": "software",
-    "url": "https://www.scrum.org/agility-path"
+    "url": "https://www.scrum.org/agility-path",
+    "discussionId": 12,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/12"
   },
   {
     "title": "Evidence-Based Management Consultant",
@@ -29,7 +35,9 @@
     "birth_date": "2013-03-01",
     "death_date": "2019-09-01",
     "type": "program",
-    "url": "https://www.scrum.org/resources/evidence-based-management"
+    "url": "https://www.scrum.org/resources/evidence-based-management",
+    "discussionId": 13,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/13"
   },
   {
     "title": "Scrum Development Kit (SDK)",
@@ -37,7 +45,9 @@
     "birth_date": "2015-10-01",
     "death_date": "2016-07-15",
     "type": "content",
-    "url": "https://kenschwaber.wordpress.com/2015/11/22/scrum-development-kit/"
+    "url": "https://kenschwaber.wordpress.com/2015/11/22/scrum-development-kit/",
+    "discussionId": 14,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/14"
   },
   {
     "title": "Partners in Principle",
@@ -45,14 +55,18 @@
     "birth_date": "2014-01-01",
     "death_date": "2019-11-01",
     "type": "program",
-    "url": "https://www.scrum.org/resources/blog/professional-training-network"
+    "url": "https://www.scrum.org/resources/blog/professional-training-network",
+    "discussionId": 15,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/15"
   },
   {
     "title": "Professional Scrum Guided Learning Platform (GLP)",
     "description": "The Guided Learning Platform is a Scrum.org platform that provides structured learning paths and resources for Scrum practitioners.",
     "death_date": "2025-03-01",
     "birth_date": "2021-01-01",
-    "url": "https://www.scrum.org/guided-learning/professional-scrum-guided-learning-platform"
+    "url": "https://www.scrum.org/guided-learning/professional-scrum-guided-learning-platform",
+    "discussionId": 16,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/16"
   },
   {
     "title": "Advanced Professional Scrum Master (APSM)",
@@ -60,7 +74,9 @@
     "death_date": "2020-01-01",
     "birth_date": "2019-01-01",
     "type": "program",
-    "url": "https://www.scrum.org/"
+    "url": "https://www.scrum.org/",
+    "discussionId": 17,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/17"
   },
   {
     "title": "Professional Scrum Expert",
@@ -68,7 +84,9 @@
     "death_date": "2015-01-01",
     "birth_date": "2015-01-01",
     "type": "certification",
-    "url": "https://s3.amazonaws.com/scrumorg-blog/wp-content/uploads/2015/01/22191504/Announcement-The-Scrum.org-Professional-Series-Updates-2015.pdf"
+    "url": "https://s3.amazonaws.com/scrumorg-blog/wp-content/uploads/2015/01/22191504/Announcement-The-Scrum.org-Professional-Series-Updates-2015.pdf",
+    "discussionId": 18,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/18"
   },
   {
     "title": "Professional Scrum Coaching",
@@ -76,6 +94,8 @@
     "death_date": "2021-07-01",
     "birth_date": "2021-12-01",
     "type": "initiative",
-    "url": "https://s3.amazonaws.com/scrumorg-blog/wp-content/uploads/2015/01/22191504/Announcement-The-Scrum.org-Professional-Series-Updates-2015.pdf"
+    "url": "https://s3.amazonaws.com/scrumorg-blog/wp-content/uploads/2015/01/22191504/Announcement-The-Scrum.org-Professional-Series-Updates-2015.pdf",
+    "discussionId": 19,
+    "discussionUrl": "https://github.com/MrHinsh/killed-by-scrumorg/discussions/19"
   }
 ]

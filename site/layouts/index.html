@@ -10,7 +10,10 @@
   <section class="section">
     <div class="container">
       <div class="text-end">
-        <a href="{{ site.Params.addObituaryUrl }}" class="btn btn-secondary mb-3"> <i class="bi bi-plus-lg"></i> Add an Obituary </a>
+        <a href="{{ site.Params.addObituaryUrl }}" class="btn btn-secondary mb-3" title="Add Obituary via Issue"> <i class="fa-solid fa-scythe"></i> <i class="fa-solid fa-plus"></i> <i class="fa-regular fa-ticket"></i></a>
+        <a href="{{ site.Params.githubRepo }}/edit/main/site/data/register.json" class="btn btn-secondary mb-3" title="Add an Obituary via Pull Request">
+          <i class="fa-solid fa-scythe"></i> <i class="fa-solid fa-plus"></i><i class="fa-solid fa-code-pull-request"></i
+        ></a>
       </div>
       <div class="row g-4">
         {{ range $sortedDeaths }}
@@ -39,9 +42,9 @@
                   {{ else }}
                     <img src="/images/tombstone.svg" alt="Unknown" width="50" height="50" />
                   {{ end }}
-                  {{ if .discussionUrl }}
+                  {{ if .discussionId }}
                     <div class="mt-2">
-                      <a href="{{ .discussionUrl }}" target="_blank" rel="noopener noreferrer" class="btn bt-sm btn-link" title="Join the discussion about {{ .title }}">Discuss </a>
+                      <a href="{{ site.Params.githubRepo }}/discussions/{{ .discussionId }}" target="_blank" rel="noopener noreferrer" class="btn bt-sm btn-link" title="Join the discussion about {{ .title }}">Discuss </a>
                     </div>
                   {{ end }}
                 </div>

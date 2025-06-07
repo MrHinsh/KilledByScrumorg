@@ -223,11 +223,9 @@ foreach ($obituary in $obituariesData) {
     
     # Search for existing discussion
     $existingDiscussion = Find-ExistingDiscussion $title $RepoOwner $RepoName
-    
     if ($existingDiscussion) {
         Write-Host "  → Found existing discussion: $($existingDiscussion.html_url)" -ForegroundColor Green
         $obituary | Add-Member -NotePropertyName 'discussionId' -NotePropertyValue $existingDiscussion.number -Force
-        $obituary | Add-Member -NotePropertyName 'discussionUrl' -NotePropertyValue $existingDiscussion.html_url -Force
         $dataChanged = $true
         $skippedCount++
     }
@@ -248,11 +246,9 @@ $($obituary.description)
 "@
         # Create the discussion
         $newDiscussion = New-GitHubDiscussion $title $body $repositoryId $obituaryCategory.id
-        
         if ($newDiscussion) {
             Write-Host "  ✓ Created discussion: $($newDiscussion.url)" -ForegroundColor Green
             $obituary | Add-Member -NotePropertyName 'discussionId' -NotePropertyValue $newDiscussion.number -Force
-            $obituary | Add-Member -NotePropertyName 'discussionUrl' -NotePropertyValue $newDiscussion.url -Force
             $dataChanged = $true
             $createdCount++
             
@@ -269,7 +265,7 @@ $($obituary.description)
 # Save updated data if changes were made
 if ($dataChanged) {
     Write-Host "`nSaving updated data to $dataFile..." -ForegroundColor Yellow
-      try {
+    try {
         # Save updated data with proper formatting (no backup to avoid Hugo conflicts)
         $obituariesData | ConvertTo-Json -Depth 10 | Set-Content $dataFile -Encoding UTF8
         Write-Host "Data file updated successfully!" -ForegroundColor Green

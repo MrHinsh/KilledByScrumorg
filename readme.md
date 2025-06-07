@@ -23,12 +23,13 @@ If you are not familiar with or do not want to use `git`, submit a [new issue](h
 1. Fork this repository.
 2. Create a new branch named after the initiative you're adding.
 3. Open the `site\data\register.json` file and add the new entry manually.
-4. Run `hugo serve --source site --config hugo.yaml,hugo.local.yaml` to ensure the file is properly formatted.
-5. Commit your changes and open a Pull Request (PR) using the new branch.
+4. Commit your changes and open a Pull Request (PR) using the new branch.
+
+**Note**: GitHub discussions will be automatically created for new obituaries during the next deployment.
 
 For contributions beyond `site\data\register.json`, see the [Contributing Guide](.github/CONTRIBUTING.md).
 
-### Environments
+## Environments
 
 - [Production](https://lemon-stone-0045b7f10.6.azurestaticapps.net)
 - [Preview](https://lemon-stone-0045b7f10-preview.centralus.6.azurestaticapps.net/)
@@ -36,7 +37,7 @@ For contributions beyond `site\data\register.json`, see the [Contributing Guide]
 
 Pull Requests automatically spawn environments. However, PR's from forks require approval to run.
 
-### Editorial Guidelines
+## Editorial Guidelines
 
 #### Description
 
@@ -55,3 +56,65 @@ Link to a source confirming its existence and end-of-life, ideally from Scrum.or
 ---
 
 Help us document the evolution of the Scrum.org ecosystem by capturing its discontinued efforts with clarity and respect.
+
+## Technical Details
+
+### Features
+
+- **Interactive Obituaries**: Each discontinued initiative is displayed with tombstone or guillotine imagery
+- **GitHub Discussions**: Community discussions are automatically created for each obituary
+- **Hugo-Powered**: Fast, static site generation with responsive design
+- **Automated Workflow**: PowerShell script manages GitHub discussions integration
+
+### Contributing (Technical)
+
+For technical contributors working on the site itself:
+
+1. Fork this repository
+2. Make your changes to the appropriate files
+3. Test locally using the development workflow below
+4. Submit a Pull Request
+
+See the [Contributing Guide](.github/CONTRIBUTING.md) for detailed guidelines.
+
+### Building and Development
+
+#### Development Server
+
+```powershell
+hugo serve --source site --config hugo.yaml,hugo.local.yaml
+```
+
+#### Production Build
+
+```powershell
+hugo --source site --config hugo.yaml
+```
+
+#### Testing Changes
+
+Run the development server and access the site at `http://localhost:1313` for live reload during development.
+
+### GitHub Discussions Integration (PowerShell)
+
+This site automatically creates GitHub discussions for each obituary. The integration is managed via a PowerShell script:
+
+```powershell
+.\.powershell\Create-GitHubDiscussions.ps1
+```
+
+**Requirements:**
+
+- Set the `HUGO_GITHUB_TOKEN` environment variable with a GitHub Personal Access Token
+- Token needs `public_repo` or `repo` scope (not just `write:discussion`)
+- GitHub Discussions must be enabled on the repository
+- An "Obituary" category must exist in GitHub Discussions
+
+**How it works:**
+
+1. Scans `site/data/register.json` for obituaries without `discussionId`
+2. Creates GitHub discussions in the "Obituary" category
+3. Updates the JSON file with `discussionId` and `discussionUrl` fields
+4. Hugo templates automatically display discussion buttons for linked obituaries
+
+The script is idempotent - you can run it multiple times safely. It will skip obituaries that already have discussions.

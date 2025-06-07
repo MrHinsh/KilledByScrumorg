@@ -13,6 +13,7 @@
     <meta name="giscus:backlink" content="https://killedbyscrumorg.com{{- .RelPermalink }}" />
     <meta name="giscus:description" content="{{- .Summary }}" />
     <meta name="license" content="© {{- now.Format "2006" }} Killed By Scrum.org." />
+    <script src="https://kit.fontawesome.com/3e6b2f4808.js" crossorigin="anonymous"></script>
   </head>
   <body data-ndka-environment="{{- hugo.Environment }}" data-ndka-version="v#{GitVersion.SemVer}#">
     <!-- Scripts -->
@@ -35,7 +36,7 @@
           <h1 class="mb-0">Killed by Scrum.org</h1>
         </div>
       </section>
-    {{- end }} 
+    {{- end }}
     <main>
       {{- block "main" . }}
         <section class="section">main</section>

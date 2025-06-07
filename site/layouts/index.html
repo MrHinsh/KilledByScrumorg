@@ -10,10 +10,10 @@
   <section class="section">
     <div class="container">
       <div class="text-end">
-        <a href="{{ site.Params.addObituaryUrl }}" class="btn btn-secondary mb-3" title="Add Obituary via Issue"> <i class="fa-solid fa-scythe"></i> <i class="fa-solid fa-plus"></i> <i class="fa-regular fa-ticket"></i></a>
-        <a href="{{ site.Params.githubRepo }}/edit/main/site/data/register.json" class="btn btn-secondary mb-3" title="Add an Obituary via Pull Request">
-          <i class="fa-solid fa-scythe"></i> <i class="fa-solid fa-plus"></i><i class="fa-solid fa-code-pull-request"></i
-        ></a>
+        <a href="{{ site.Params.addObituaryUrl }}" class="btn btn-sm btn-outline-primary mb-3" title="Add Obituary via Issue"> <i class="fa-regular fa-plus"></i> <i class="fa-regular fa-scythe"></i> <i class="fa-regular fa-ticket"></i> </a>
+        <a href="{{ site.Params.githubRepo }}/edit/main/site/data/register.json" class="btn btn-sm btn-outline-secondary mb-3" title="Add an Obituary via Pull Request">
+          <i class="fa-regular fa-plus"></i> <i class="fa-regular fa-scythe"></i> <i class="fa-regular fa-code-pull-request"></i>
+        </a>
       </div>
       <div class="row g-4">
         {{ range $sortedDeaths }}

@@ -1,4 +1,4 @@
-name: Build & Release (KilledByScrumorg)
+name: Build & Release (ScrumGuidesExpansionPack)
 
 permissions:
   contents: read
@@ -36,10 +36,10 @@ jobs:
       GitVersion_NuGetVersion: ${{ steps.gitversion.outputs.GitVersion_NuGetVersion }}
       GitVersion_PreReleaseNumber: ${{ steps.gitversion.outputs.GitVersion_PreReleaseNumber }}
       GitVersion_MajorMinorPatch: ${{ steps.gitversion.outputs.GitVersion_MajorMinorPatch }}
-      KilledByScrumorg_Ring: ${{ steps.KilledByScrumorg.outputs.Ring }}
-      KilledByScrumorg_AzureSitesEnvironment: ${{ steps.KilledByScrumorg.outputs.AzureSitesEnvironment }}
-      KilledByScrumorg_AzureSitesConfig: ${{ steps.KilledByScrumorg.outputs.AzureSitesConfig }}
-      KilledByScrumorg_BLOB_URL_BIT: ${{ steps.KilledByScrumorg.outputs.BLOB_URL_BIT }}
+      ScrumGuidesExpansionPack_Ring: ${{ steps.ScrumGuidesExpansionPack.outputs.Ring }}
+      ScrumGuidesExpansionPack_AzureSitesEnvironment: ${{ steps.ScrumGuidesExpansionPack.outputs.AzureSitesEnvironment }}
+      ScrumGuidesExpansionPack_AzureSitesConfig: ${{ steps.ScrumGuidesExpansionPack.outputs.AzureSitesConfig }}
+      ScrumGuidesExpansionPack_BLOB_URL_BIT: ${{ steps.ScrumGuidesExpansionPack.outputs.BLOB_URL_BIT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -66,9 +66,9 @@ jobs:
           filters: |
             content:
               - 'content/**'
-      - name: "Build KilledByScrumorg Outputs"
+      - name: "Build ScrumGuidesExpansionPack Outputs"
         shell: pwsh
-        id: KilledByScrumorg
+        id: ScrumGuidesExpansionPack
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -111,7 +111,7 @@ jobs:
                   $Ring = "Canary";
                   $AzureSitesEnvironment = "canary-${{ github.event.pull_request.number }}"
                   $AzureSitesConfig = "canary"
-                  $BLOB_URL_BIT = 'https://KilledByScrumorgblobs.blob.core.windows.net/$web'
+                  $BLOB_URL_BIT = 'https://ScrumGuidesExpansionPackblobs.blob.core.windows.net/$web'
                   $docs_baseURL = "/canary/$branchSafeName"
               }
           }
@@ -141,15 +141,15 @@ jobs:
       - name: "Show Summery"
         if: always()
         shell: pwsh
-        id: KilledByScrumorg-summery
+        id: ScrumGuidesExpansionPack-summery
         run: |
           $markdown = @"
-             ## ${{needs.Setup.outputs.GitVersion_SemVer}} (${{needs.Setup.outputs.KilledByScrumorg_Ring}})
-             ### KilledByScrumorg
-               - KilledByScrumorg_Ring: ${{needs.Setup.outputs.KilledByScrumorg_Ring}}
-               - KilledByScrumorg_AzureSitesEnvironment: ${{needs.Setup.outputs.KilledByScrumorg_AzureSitesEnvironment}}
-               - KilledByScrumorg_AzureSitesConfig: ${{needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig}}
-               - KilledByScrumorg_BLOB_URL_BIT: ${{needs.Setup.outputs.KilledByScrumorg_BLOB_URL_BIT}}
+             ## ${{needs.Setup.outputs.GitVersion_SemVer}} (${{needs.Setup.outputs.ScrumGuidesExpansionPack_Ring}})
+             ### ScrumGuidesExpansionPack
+               - ScrumGuidesExpansionPack_Ring: ${{needs.Setup.outputs.ScrumGuidesExpansionPack_Ring}}
+               - ScrumGuidesExpansionPack_AzureSitesEnvironment: ${{needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesEnvironment}}
+               - ScrumGuidesExpansionPack_AzureSitesConfig: ${{needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig}}
+               - ScrumGuidesExpansionPack_BLOB_URL_BIT: ${{needs.Setup.outputs.ScrumGuidesExpansionPack_BLOB_URL_BIT}}
 
              ### GitVersion
                - GitVersion_BranchName: ${{needs.Setup.outputs.GitVersion_BranchName}}
@@ -185,7 +185,7 @@ jobs:
           GitVersion_AssemblySemVer: ${{ needs.Setup.outputs.GitVersion_AssemblySemVer }}
           GitVersion_InformationalVersion: ${{ needs.Setup.outputs.GitVersion_InformationalVersion }}
           GitVersion.SemVer: ${{ needs.Setup.outputs.GitVersion_SemVer }}
-          KilledByScrumorg_AzureSitesConfig: ${{ needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig }}
+          ScrumGuidesExpansionPack_AzureSitesConfig: ${{ needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig }}
           PR_Number: ${{ github.event.number }}
 
       - name: Setup Hugo
@@ -196,9 +196,9 @@ jobs:
 
       - name: Build
         run: |
-          Write-Host "Building site for ${{ (needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig) }}";
-          $env:HUGO_ENV = "${{ (needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig) }}";
-          hugo --source site --config hugo.yaml,hugo.${{ (needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig) }}.yaml --logLevel info; # --minify
+          Write-Host "Building site for ${{ (needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig) }}";
+          $env:HUGO_ENV = "${{ (needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig) }}";
+          hugo --source site --config hugo.yaml,hugo.${{ (needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig) }}.yaml --logLevel info; # --minify
 
       - name: Copy Files
         shell: pwsh
@@ -263,7 +263,7 @@ jobs:
 
           # Paths to main and environment-specific config files
           $rootConfig = "./_site/staticwebapp.config.json"
-          $environmentConfig = "./_site/staticwebapp.config.${{ (needs.Setup.outputs.KilledByScrumorg_AzureSitesConfig) }}.json"
+          $environmentConfig = "./_site/staticwebapp.config.${{ (needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesConfig) }}.json"
           # $routesConfig = "./_site/staticwebapp.config.routes.json"
 
           # Check if both target files exist
@@ -328,16 +328,16 @@ jobs:
           skip_app_build: true
           skip_api_build: false
           output_location: ""
-          deployment_environment: ${{ (needs.Setup.outputs.KilledByScrumorg_AzureSitesEnvironment) }}
+          deployment_environment: ${{ (needs.Setup.outputs.ScrumGuidesExpansionPack_AzureSitesEnvironment) }}
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_STONE_0045B7F10 }}
 
       - name: "Show Summery"
         if: always()
         shell: pwsh
-        id: KilledByScrumorg-summery
+        id: ScrumGuidesExpansionPack-summery
         run: |
           $markdown = @"
-              ## ${{needs.Setup.outputs.GitVersion_SemVer}} (${{needs.Setup.outputs.KilledByScrumorg_Ring}})
+              ## ${{needs.Setup.outputs.GitVersion_SemVer}} (${{needs.Setup.outputs.ScrumGuidesExpansionPack_Ring}})
              Deployed to [${{steps.azureDeploy.outputs.static_web_app_url}}](${{steps.azureDeploy.outputs.static_web_app_url}})
              Files on Disk: ${{steps.files.outputs.sizeOnDisk}}
           "@

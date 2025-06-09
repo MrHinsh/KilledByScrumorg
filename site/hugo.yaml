@@ -1,5 +1,5 @@
 languageCode: en
-title: Killed by Scrum.org
+title: Scrum Guides 2025 Expansion Pack
 
 publishDir: ../public
 resourceDir: ../resources
@@ -13,12 +13,10 @@ taxonomies: {}
 
 # Site-wide parameters
 params:
-  description: "Killed by Scrum.org"
+  description: "Scrum Guides 2025 Expansion Pack"
   keywords: "Scrum"
   og_image: "/images/og-image.jpg" # URL to the default Open Graph image
-  githubRepo: "https://github.com/MrHinsh/killed-by-scrumorg"
-  editURL: "https://github.com/MrHinsh/killed-by-scrumorg/edit/main/site/content/" # URL to edit content on GitHub
-  addObituaryUrl: "https://github.com/MrHinsh/killed-by-scrumorg/issues/new?template=add-an-obituary.yml"
+  siteProdUrl: "https://scrumguidesexpansionpack.org"
 
 # Enable sitemap and robots.txt
 sitemap:
